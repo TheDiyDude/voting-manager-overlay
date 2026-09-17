@@ -24,20 +24,20 @@ A custom, interactive poll system designed for **Streamer.bot** (v1.0.7+) and **
 ## Setup Instructions
 
 ### 1. File Placement
-1. Create the directory `C:\StreamOverlay\`.
-2. Save the `overlay/poll_overlay.html` file into `C:\StreamOverlay\poll_overlay.html`.
+1. Create the directory `C:\Streaming\poll\`.
+2. Save the `overlay/poll_overlay.html` file into `C:\Streaming\poll\poll_overlay.html`.
 
 ### 2. Streamer.bot Setup
 1. Create a new Action named `Poll Core Manager`.
 2. Add a C# Subaction: `Core -> C# -> Execute C# Code`.
-3. Paste the code from `streamerbot/PollManager.cs` into the subaction and compile it.
+3. Paste the code from `streamerbot/PollManager.cpp` into the subaction and compile it.
 4. Create two triggers under **Commands**:
    - `!poll` $\rightarrow$ Link trigger to the `Poll Core Manager` action (`Command Triggered: !poll`).
    - `Poll Vote` with lines `1` through `10` $\rightarrow$ Link trigger to the same action.
 
 ### 3. OBS Studio
 1. Add a new **Browser Source**.
-2. Check **Local file** and select `C:\StreamOverlay\poll_overlay.html`.
+2. Check **Local file** and select `C:\Streaming\poll\poll_overlay.html`.
 3. Set the dimensions to **600 x 800** px.
 
 ## License
@@ -79,20 +79,20 @@ Ein maßgeschneidertes, interaktives Poll-System für **Streamer.bot** (v1.0.7+)
 ## Einrichtung
 
 ### 1. Dateien ablegen
-1. Erstelle den Ordner `C:\StreamOverlay\`.
-2. Speichere die Datei `overlay/poll_overlay.html` in `C:\StreamOverlay\poll_overlay.html`.
+1. Erstelle den Ordner `C:\Streaming\poll\`.
+2. Speichere die Datei `overlay/poll_overlay.html` in `C:\Streaming\poll\poll_overlay_de.html`.
 
 ### 2. Streamer.bot einrichten
 1. Erstelle eine neue Action: `Poll Core Manager`.
 2. Füge eine C#-Subaction hinzu: `Core -> C# -> Execute C# Code`.
-3. Kopiere den Code aus `streamerbot/PollManager.cs` in die Subaction und kompiliere ihn.
+3. Kopiere den Code aus `streamerbot/PollManager_de.cpp` in die Subaction und kompiliere ihn.
 4. Erstelle zwei Commands unter **Commands**:
    - `!poll` $\rightarrow$ Trigger in der Action verknüpfen (`Command Triggered: !poll`).
    - `Poll Vote` mit den Zeilen `1` bis `10` $\rightarrow$ Trigger in derselben Action verknüpfen.
 
 ### 3. OBS Studio
 1. Füge eine neue **Browserquelle** hinzu.
-2. Aktiviere **Lokale Datei** und wähle `C:\StreamOverlay\poll_overlay.html`.
+2. Aktiviere **Lokale Datei** und wähle `C:\Streaming\poll\poll_overlay_de.html`.
 3. Setze die Dimensionen auf **600 x 800** px.
 
 ## License
