@@ -6,7 +6,7 @@ A custom, interactive poll system designed for **Streamer.bot** (v1.0.7+) and **
 - **Flexible Polls**: Highly customizable with up to 10 voting options.
 - **Full Chat Control**: Create, start, pause, resume, reset, and adjust remaining time using simple chat commands.
 - **Smart Chat Voting**: Viewers vote by sending option numbers (`1`, `2`, etc.). Out-of-bounds numbers are ignored, and double-voting is prevented.
-- **Smart Winner Handling**: Built-in tie detection ("Unentschieden!") and fallback handling for 0-vote scenarios ("Kein Ergebnis").
+- **Smart Winner Handling**: Built-in tie detection ("Draw!") and fallback handling for 0-vote scenarios ("No Result").
 - **Animated Ticker**: Dynamic marquee ticker at the bottom explaining how to submit votes in chat.
 
 ## Commands (Moderator / Broadcaster)
