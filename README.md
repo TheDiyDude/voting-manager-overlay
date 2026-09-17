@@ -11,7 +11,7 @@ A custom, interactive poll system designed for **Streamer.bot** (v1.0.7+) and **
 
 ## Video
 
-[![Eigener Chat-Poll für OBS Studio & Streamer.bot](https://img.youtube.com/vi/hI3y1Iny08s/maxresdefault.jpg)](https://youtu.be/hI3y1Iny08s)
+[![Own chat poll for OBS Studio & Streamer.bot](https://img.youtube.com/vi/hI3y1Iny08s/maxresdefault.jpg)](https://youtu.be/hI3y1Iny08s)
 
 ## Screenshots
 
