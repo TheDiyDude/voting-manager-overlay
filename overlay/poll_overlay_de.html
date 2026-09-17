@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Randvieh Poll Overlay</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@700&display=swap');
+
+  body {
+    margin: 0;
+    padding: 20px;
+    background: transparent;
+    font-family: 'Rajdhani', sans-serif;
+    color: #ffffff;
+    user-select: none;
+    overflow: hidden;
+  }
+
+  #poll-container {
+    width: 520px;
+    background: rgba(18, 8, 38, 0.95);
+    border: 3px solid #b026ff;
+    box-shadow: 0 0 15px #b026ff, inset 0 0 10px #7000ff;
+    border-radius: 8px;
+    padding: 18px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+
+  #poll-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #a124db;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  #poll-title {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff;
+    font-weight: bold;
+    max-width: 340px;
+    word-break: break-word;
+  }
+
+  #poll-timer {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 16px;
+    color: #ffe600;
+    text-shadow: 0 0 8px #ffe600;
+  }
+
+  .option-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+
+  .option-label {
+    width: 180px;
+    flex-shrink: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 0 5px #ffffff;
+  }
+
+  .bar-container {
+    flex-grow: 1;
+    height: 26px;
+    border: 2px solid #00aaff;
+    box-shadow: 0 0 8px #00aaff;
+    background: rgba(0, 20, 50, 0.6);
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ffe600, #ffae00);
+    box-shadow: 0 0 10px #ffe600;
+    transition: width 0.3s ease;
+  }
+
+  .option-count {
+    min-width: 60px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    color: #ffffff;
+    text-align: right;
+    text-shadow: 0 0 5px #b026ff;
+  }
+
+  #instruction-ticker {
+    display: none;
+    margin-top: 12px;
+    background: #ffe600;
+    color: #120826;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    line-height: 1.2;
+    border-radius: 4px;
+    box-shadow: 0 0 15px #ffe600;
+    overflow: hidden;
+    white-space: nowrap !important;
+    padding: 8px 0;
+    height: 16px;
+  }
+
+  .ticker-text {
+    display: inline-block;
+    white-space: nowrap !important;
+    padding-left: 100%;
+    animation: marquee 12s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+  }
+
+  /* Gewinner-Banner */
+  #winner-banner {
+    display: none;
+    text-align: center;
+    padding: 10px;
+    margin-top: 12px;
+    background: #ffe600;
+    color: #120826;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 14px;
+    border-radius: 4px;
+    box-shadow: 0 0 15px #ffe600;
+  }
+</style>
+</head>
+<body>
+
+<div id="poll-container">
+  <div id="poll-header">
+    <div id="poll-title">POLL TITLE</div>
+    <div id="poll-timer">00:00</div>
+  </div>
+  <div id="poll-options"></div>
+  
+  <div id="instruction-ticker">
+    <div class="ticker-text" id="ticker-text"></div>
+  </div>
+
+  <div id="winner-banner">GEWINNER: OPTION 1</div>
+</div>
+
+<script>
+  let remainingSeconds = 0;
+  let lastStatus = "";
+  let hideTimeout = null;
+  let currentTickerMsg = "";
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.innerText = text;
+    return div.innerHTML;
+  }
+
+  async function updatePoll() {
+    try {
+      const response = await fetch('poll_data.json?v=' + Date.now());
+      if (!response.ok) return;
+      const data = await response.json();
+      handlePollUpdate(data);
+    } catch (e) {}
+  }
+
+  function handlePollUpdate(data) {
+    const container = document.getElementById("poll-container");
+    const banner = document.getElementById("winner-banner");
+    const ticker = document.getElementById("instruction-ticker");
+
+    if (data.status === "idle") {
+      container.style.opacity = "0";
+      container.style.display = "none";
+      banner.style.display = "none";
+      ticker.style.display = "none";
+      return;
+    }
+
+    if (data.status === "prepared" || data.status === "active" || data.status === "paused") {
+      if (hideTimeout) {
+        clearTimeout(hideTimeout);
+        hideTimeout = null;
+      }
+      banner.style.display = "none";
+      ticker.style.display = "block";
+      container.style.display = "block";
+      container.style.opacity = "1";
+
+      document.getElementById("poll-title").innerText = data.title;
+      remainingSeconds = data.remainingSeconds;
+
+      if (data.status === "paused") {
+        document.getElementById("poll-timer").innerText = "PAUSE";
+      } else {
+        updateTimerDisplay();
+      }
+
+      renderOptions(data.options, data.votes, data.totalVotes);
+      updateTickerText(data.options);
+    } else if (data.status === "ended") {
+      ticker.style.display = "none";
+      renderOptions(data.options, data.votes, data.totalVotes);
+      document.getElementById("poll-timer").innerText = "BEENDET";
+
+      if (data.winner) {
+        banner.innerText = "GEWINNER: " + data.winner;
+        banner.style.display = "block";
+      }
+
+      if (lastStatus !== "ended" && !hideTimeout) {
+        hideTimeout = setTimeout(() => {
+          container.style.opacity = "0";
+          setTimeout(() => { container.style.display = "none"; }, 500);
+        }, 60000);
+      }
+    }
+    lastStatus = data.status;
+  }
+
+  function updateTimerDisplay() {
+    const m = Math.floor(remainingSeconds / 60).toString().padStart(2, '0');
+    const s = (remainingSeconds % 60).toString().padStart(2, '0');
+    document.getElementById("poll-timer").innerText = `${m}:${s}`;
+  }
+
+  function renderOptions(options, votes, totalVotes) {
+    const list = document.getElementById("poll-options");
+    list.innerHTML = "";
+
+    options.forEach((opt, idx) => {
+      const voteCount = votes[idx] || 0;
+      const pct = totalVotes > 0 ? (voteCount / totalVotes) * 100 : 0;
+
+      const row = document.createElement("div");
+      row.className = "option-row";
+      row.innerHTML = `
+        <div class="option-label">${idx + 1} ${escapeHtml(opt)}</div>
+        <div class="bar-container">
+          <div class="bar-fill" style="width: ${pct}%"></div>
+        </div>
+        <div class="option-count">${voteCount}/${totalVotes}</div>
+      `;
+      list.appendChild(row);
+    });
+  }
+
+  function updateTickerText(options) {
+    const tickerMsg = options
+      .map((opt, idx) => `Tippe ${idx + 1} für "${escapeHtml(opt)}"`)
+      .join('&nbsp;&nbsp;&nbsp;&nbsp;+++&nbsp;&nbsp;&nbsp;&nbsp;');
+
+    if (tickerMsg !== currentTickerMsg) {
+      currentTickerMsg = tickerMsg;
+      document.getElementById("ticker-text").innerHTML = tickerMsg;
+    }
+  }
+
+  setInterval(updatePoll, 300);
+  updatePoll();
+</script>
+</body>
+</html>
