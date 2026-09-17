@@ -98,7 +98,7 @@ Ein maßgeschneidertes, interaktives Poll-System für **Streamer.bot** (v1.0.7+)
 
 ### 1. Dateien ablegen
 1. Erstelle den Ordner `C:\Streaming\poll\`.
-2. Speichere die Datei `overlay/poll_overlay.html` in `C:\Streaming\poll\poll_overlay_de.html`.
+2. Speichere die Datei `overlay/poll_overlay_de.html` in `C:\Streaming\poll\poll_overlay_de.html`.
 
 ### 2. Streamer.bot einrichten
 1. Erstelle eine neue Action: `Poll Core Manager`.
