@@ -9,6 +9,15 @@ A custom, interactive poll system designed for **Streamer.bot** (v1.0.7+) and **
 - **Smart Winner Handling**: Built-in tie detection ("Draw!") and fallback handling for 0-vote scenarios ("No Result").
 - **Animated Ticker**: Dynamic marquee ticker at the bottom explaining how to submit votes in chat.
 
+## Screenshots
+
+<p align="center">
+  <img src="media/poll1.png" width="22%" alt="Poll Screenshot 1" />
+  <img src="media/poll2.png" width="22%" alt="Poll Screenshot 2" />
+  <img src="media/poll3.png" width="22%" alt="Poll Screenshot 3" />
+  <img src="media/poll4.png" width="22%" alt="Poll Screenshot 4" />
+</p>
+
 ## Commands (Moderator / Broadcaster)
 
 | Command | Description |
@@ -63,6 +72,15 @@ Ein maßgeschneidertes, interaktives Poll-System für **Streamer.bot** (v1.0.7+)
 - **Auto-Verstärkung im Chat**: Chatter stimmen durch einfache Zahlen (`1`, `2`, ...) ab. Ungültige Zahlen werden ignoriert, Doppel-Abstimmungen verhindert.
 - **Smart Winner Handling**: Automatische Erkennung von Gleichständen ("Unentschieden!") sowie "Kein Ergebnis" bei 0 Stimmen.
 - **Animation & Marquee**: Dynamischer Lauftext zur Erklärung der Stimmabgabe im unteren Bereich des Overlays.
+
+## Screenshots
+
+<p align="center">
+  <img src="media/poll1.png" width="22%" alt="Poll Screenshot 1" />
+  <img src="media/poll2.png" width="22%" alt="Poll Screenshot 2" />
+  <img src="media/poll3.png" width="22%" alt="Poll Screenshot 3" />
+  <img src="media/poll4.png" width="22%" alt="Poll Screenshot 4" />
+</p>
 
 ## Befehle (Moderator / Broadcaster)
 
