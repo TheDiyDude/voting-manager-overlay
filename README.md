@@ -1,4 +1,4 @@
-# Streamer.bot Retro Poll Overlay
+# Streamer.bot Retro Poll Overlay (German version below)
 
 A custom, interactive poll system designed for **Streamer.bot** (v1.0.7+) and **OBS Studio** with a cyberpunk/retro synthwave aesthetic.
 
@@ -52,4 +52,60 @@ If you want to get me a cup of coffee I appreciate:
 
 [![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/randvieh)
 
-	
+
+# Streamer.bot Retro Poll Overlay
+
+Ein maßgeschneidertes, interaktives Poll-System für **Streamer.bot** (v1.0.7+) und **OBS Studio** im Cyberpunk/Retro Synthwave Look.
+
+## Features
+- **Flexible Polls**: Bis zu 10 Wahloptionen frei konfigurierbar.
+- **Volle Chat-Steuerung**: Erstellen, Starten, Pausieren, Fortsetzen, Zurücksetzen und Anpassen der Restzeit via Chat-Befehlen.
+- **Auto-Verstärkung im Chat**: Chatter stimmen durch einfache Zahlen (`1`, `2`, ...) ab. Ungültige Zahlen werden ignoriert, Doppel-Abstimmungen verhindert.
+- **Smart Winner Handling**: Automatische Erkennung von Gleichständen ("Unentschieden!") sowie "Kein Ergebnis" bei 0 Stimmen.
+- **Animation & Marquee**: Dynamischer Lauftext zur Erklärung der Stimmabgabe im unteren Bereich des Overlays.
+
+## Befehle (Moderator / Broadcaster)
+
+| Befehl | Beschreibung |
+| :--- | :--- |
+| `!poll 10m "Titel" "Opt 1" "Opt 2"` | Vorbereitung einer Umfrage mit Dauer (z. B. 10m, 90s) |
+| `!poll start` | Umfrage starten |
+| `!poll pause` | Timer pausieren |
+| `!poll resume` | Timer fortsetzen |
+| `!poll restart` | Umfrage mit allen Optionen zurücksetzen und neu starten |
+| `!poll +2m` / `!poll -1m` | Restzeit im laufenden Poll anpassen |
+| `!poll end` | Poll vorzeitig beenden und Ergebnis ausgeben |
+
+## Einrichtung
+
+### 1. Dateien ablegen
+1. Erstelle den Ordner `C:\StreamOverlay\`.
+2. Speichere die Datei `overlay/poll_overlay.html` in `C:\StreamOverlay\poll_overlay.html`.
+
+### 2. Streamer.bot einrichten
+1. Erstelle eine neue Action: `Poll Core Manager`.
+2. Füge eine C#-Subaction hinzu: `Core -> C# -> Execute C# Code`.
+3. Kopiere den Code aus `streamerbot/PollManager.cs` in die Subaction und kompiliere ihn.
+4. Erstelle zwei Commands unter **Commands**:
+   - `!poll` $\rightarrow$ Trigger in der Action verknüpfen (`Command Triggered: !poll`).
+   - `Poll Vote` mit den Zeilen `1` bis `10` $\rightarrow$ Trigger in derselben Action verknüpfen.
+
+### 3. OBS Studio
+1. Füge eine neue **Browserquelle** hinzu.
+2. Aktiviere **Lokale Datei** und wähle `C:\StreamOverlay\poll_overlay.html`.
+3. Setze die Dimensionen auf **600 x 800** px.
+
+## License
+MIT License - Siehe [LICENSE](LICENSE) für Details.
+
+## Contact
+
+**Marc-Oliver Blumenauer**  
+Email: [marc@l3c.de](mailto:marc@l3c.de)
+
+If you want to get me a cup of coffee I appreciate: 
+
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/randvieh)
+
+
+
