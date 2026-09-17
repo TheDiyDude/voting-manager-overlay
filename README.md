@@ -9,6 +9,8 @@ A custom, interactive poll system designed for **Streamer.bot** (v1.0.7+) and **
 - **Smart Winner Handling**: Built-in tie detection ("Draw!") and fallback handling for 0-vote scenarios ("No Result").
 - **Animated Ticker**: Dynamic marquee ticker at the bottom explaining how to submit votes in chat.
 
+[![Eigener Chat-Poll für OBS Studio & Streamer.bot](https://img.youtube.com/vi/hI3y1Iny08s/maxresdefault.jpg)](https://youtu.be/hI3y1Iny08s "Eigener Chat-Poll für OBS Studio & Streamer.bot!")
+
 ## Screenshots
 
 <p align="center">
@@ -72,6 +74,8 @@ Ein maßgeschneidertes, interaktives Poll-System für **Streamer.bot** (v1.0.7+)
 - **Auto-Verstärkung im Chat**: Chatter stimmen durch einfache Zahlen (`1`, `2`, ...) ab. Ungültige Zahlen werden ignoriert, Doppel-Abstimmungen verhindert.
 - **Smart Winner Handling**: Automatische Erkennung von Gleichständen ("Unentschieden!") sowie "Kein Ergebnis" bei 0 Stimmen.
 - **Animation & Marquee**: Dynamischer Lauftext zur Erklärung der Stimmabgabe im unteren Bereich des Overlays.
+
+[![Eigener Chat-Poll für OBS Studio & Streamer.bot](https://img.youtube.com/vi/hI3y1Iny08s/maxresdefault.jpg)](https://youtu.be/hI3y1Iny08s "Eigener Chat-Poll für OBS Studio & Streamer.bot!")
 
 ## Screenshots
 
