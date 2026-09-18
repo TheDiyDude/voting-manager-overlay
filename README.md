@@ -16,11 +16,12 @@ A custom, interactive poll system designed for **Streamer.bot** (v1.0.7+) and **
 ## Screenshots
 
 <p align="center">
-  <img src="media/Poll_Youtube.png" width="22%" alt="Poll Screenshot 0" />
-  <img src="media/poll1.png" width="22%" alt="Poll Screenshot 1" />
-  <img src="media/poll2.png" width="22%" alt="Poll Screenshot 2" />
-  <img src="media/poll3.png" width="22%" alt="Poll Screenshot 3" />
-  <img src="media/poll4.png" width="22%" alt="Poll Screenshot 4" />
+  <img src="media/Poll_Youtube1.png" width="22%" alt="Poll Screenshot 1" />
+  <img src="media/Poll_Youtube.png" width="22%" alt="Poll Screenshot 2" />
+  <img src="media/poll1.png" width="22%" alt="Poll Screenshot 3" />
+  <img src="media/poll2.png" width="22%" alt="Poll Screenshot 4" />
+  <img src="media/poll3.png" width="22%" alt="Poll Screenshot 5" />
+  <img src="media/poll4.png" width="22%" alt="Poll Screenshot 6" />
 </p>
 
 ## Commands (Moderator / Broadcaster)
@@ -85,11 +86,12 @@ Ein maßgeschneidertes, interaktives Poll-System für **Streamer.bot** (v1.0.7+)
 ## Screenshots
 
 <p align="center">
-  <img src="media/Poll_Youtube.png" width="22%" alt="Poll Screenshot 0" />
-  <img src="media/poll1.png" width="22%" alt="Poll Screenshot 1" />
-  <img src="media/poll2.png" width="22%" alt="Poll Screenshot 2" />
-  <img src="media/poll3.png" width="22%" alt="Poll Screenshot 3" />
-  <img src="media/poll4.png" width="22%" alt="Poll Screenshot 4" />
+  <img src="media/Poll_Youtube1.png" width="22%" alt="Poll Screenshot 1" />
+  <img src="media/Poll_Youtube.png" width="22%" alt="Poll Screenshot 2" />
+  <img src="media/poll1.png" width="22%" alt="Poll Screenshot 3" />
+  <img src="media/poll2.png" width="22%" alt="Poll Screenshot 4" />
+  <img src="media/poll3.png" width="22%" alt="Poll Screenshot 5" />
+  <img src="media/poll4.png" width="22%" alt="Poll Screenshot 6" />
 </p>
 
 ## Befehle (Moderator / Broadcaster)
