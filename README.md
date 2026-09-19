@@ -1,6 +1,6 @@
 # Streamer.bot Retro Poll Overlay (German version below)
 
-A custom, interactive poll system designed for **Streamer.bot** (v1.0.7+) and **OBS Studio** with a cyberpunk/retro synthwave aesthetic.
+A custom, interactive poll system designed for **Streamer.bot** (v1.0.7+) and **OBS Studio** with a retro aesthetic.
 
 ## Features
 - **Flexible Polls**: Highly customizable with up to 10 voting options.
@@ -70,7 +70,7 @@ If you want to get me a cup of coffee I appreciate:
 
 # Streamer.bot Retro Poll Overlay
 
-Ein maßgeschneidertes, interaktives Poll-System für **Streamer.bot** (v1.0.7+) und **OBS Studio** im Cyberpunk/Retro Synthwave Look.
+Ein maßgeschneidertes, interaktives Poll-System für **Streamer.bot** (v1.0.7+) und **OBS Studio** im Retro Look.
 
 ## Features
 - **Flexible Polls**: Bis zu 10 Wahloptionen frei konfigurierbar.
