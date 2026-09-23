@@ -22,6 +22,7 @@ A custom, interactive poll system designed for **Streamer.bot** (v1.0.7+) and **
   <img src="media/poll2.png" width="22%" alt="Poll Screenshot 4" />
   <img src="media/poll3.png" width="22%" alt="Poll Screenshot 5" />
   <img src="media/poll4.png" width="22%" alt="Poll Screenshot 6" />
+  <img src="media/poll_modern.png" width="22%" alt="Poll Screenshot Modern" />
 </p>
 
 ## Commands (Moderator / Broadcaster)
@@ -92,6 +93,7 @@ Ein maßgeschneidertes, interaktives Poll-System für **Streamer.bot** (v1.0.7+)
   <img src="media/poll2.png" width="22%" alt="Poll Screenshot 4" />
   <img src="media/poll3.png" width="22%" alt="Poll Screenshot 5" />
   <img src="media/poll4.png" width="22%" alt="Poll Screenshot 6" />
+  <img src="media/poll_modern.png" width="22%" alt="Poll Screenshot Modern" />
 </p>
 
 ## Befehle (Moderator / Broadcaster)
